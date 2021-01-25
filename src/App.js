@@ -2,14 +2,20 @@ import './style.css';
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { SketchPicker } from 'react-color';
-import { io } from 'socket.io-client';
+import { initSocket, disconnectSocket, sendColor, subscribeToColor } from './ServiceSocket';
 
 function App() {
 	useEffect(() => {
-		const socket = io('http://localhost:3000', {
-			transports: ['websocket'],
-		});
+		initSocket();
+		subscribeToColor((color) => setColor(color));
+
+		return () => disconnectSocket();
 	}, []);
+
+	const onClickHandler = (e) => {
+		e.preventDefault();
+		sendColor(color);
+	};
 
 	const [color, setColor] = useState('green');
 	const [hidden, setHidden] = useState(false);
@@ -36,6 +42,7 @@ function App() {
 				<button onClick={() => setHidden(!hidden)}>
 					{hidden ? 'Close Color Picker' : 'Open Color Picker'}{' '}
 				</button>
+				<button onClick={onClickHandler}> Change Color</button>
 			</div>
 		</div>
 	);
