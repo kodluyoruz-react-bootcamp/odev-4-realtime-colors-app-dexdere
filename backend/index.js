@@ -2,7 +2,7 @@ const app = require('express')();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 
-const Port = process.env.path || 3000;
+const Port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
 	res.end('Merhaba Socket.IO');
