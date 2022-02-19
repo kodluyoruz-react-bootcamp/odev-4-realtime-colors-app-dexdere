@@ -1,5 +1,5 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6f030e73-5140-4473-9912-0b463bb5099b/deploy-status)](https://app.netlify.com/sites/infallible-hypatia-824163/deploys) <br />
-[Live Demo](https://600f3ddbb7e7af00093d8060--infallible-hypatia-824163.netlify.app)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6f030e73-5140-4473-9912-0b463bb5099b/deploy-status)](https://app.netlify.com/sites/realtimecolor/deploys) <br />
+[Live Demo](https://realtimecolor.netlify.app/)
 
 # Getting Started with Create React App
 
